@@ -21,7 +21,6 @@ export function PokemonsProvider({ children }) {
             }
         }).then(response => {
             setPokemons(response.data);
-            console.log(response.data)
         });
     }
 
