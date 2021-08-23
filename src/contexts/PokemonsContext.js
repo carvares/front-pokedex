@@ -12,7 +12,7 @@ export function PokemonsProvider({ children }) {
 
     useEffect(() => {
         updatePokemons();
-    }, [token?.token]);
+    }, [token?.token]); //eslint-disable-line
 
     function updatePokemons() {
         axios.get(`${process.env.REACT_APP_API_BASE_URL}/pokemons`, {
@@ -20,8 +20,7 @@ export function PokemonsProvider({ children }) {
                 Authorization: `Bearer ${token?.token}`
             }
         }).then(response => {
-            setPokemons(response.data)
-            console.log(response.data);
+            setPokemons(response.data);
         });
     }
 
